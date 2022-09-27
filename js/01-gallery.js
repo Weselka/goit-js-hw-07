@@ -30,11 +30,6 @@ const onItemClick = event => {
   event.preventDefault();
   if (event.target === event.currentTarget) return;
 
-  // console.log(event.currentTarget);
-  // console.log(event.target);
-  // console.log(event.target.nodeName);
-  // console.log(event.target.dataset.source);
-
   const options = {
     onShow: () => {
       window.addEventListener('keydown', keyClose);
