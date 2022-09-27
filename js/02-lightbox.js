@@ -6,16 +6,9 @@ console.log(galleryItems);
 let items = galleryItems;
 
 const galleryTemplate = ({ preview, original, description }) =>
-  `<div class="gallery__item">
-  <a class="gallery__link" href="${preview}">
-    <img
-      class="gallery__image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
-    />
-  </a>
-</div>`;
+  `<a class="gallery__item" href="${preview}">
+  <img class="gallery__image" src="${preview}" alt="${description}" />
+</a>`;
 
 const refs = {
   containerGalleryItems: document.querySelector('.gallery'),
@@ -27,3 +20,8 @@ const render = () => {
 };
 
 render();
+
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
